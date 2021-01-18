@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using ServiceStack;
 
@@ -14,7 +15,7 @@ namespace SSLambda
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(builder =>
                 {
-                    builder.UseModularStartup<Startup>();
+                    builder.UseStartup<Startup>();
                 });
     }
 }
