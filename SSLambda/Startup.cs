@@ -42,7 +42,7 @@ namespace SSLambda
 
     public class AppHost : AppHostBase
     {
-        public AppHost() : base("SSLambda99", typeof(MyServices).Assembly) { }
+        public AppHost() : base("SSLambda992", typeof(MyServices).Assembly) { }
 
         // Configure your AppHost with the necessary configuration and dependencies your App needs
         public override void Configure(Container container)
