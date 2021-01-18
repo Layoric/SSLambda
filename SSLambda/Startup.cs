@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -10,11 +11,11 @@ using SSLambda.ServiceInterface;
 
 namespace SSLambda
 {
-    public class Startup
+    public class Startup : ModularStartup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public new void ConfigureServices(IServiceCollection services)
         {
         }
 
@@ -51,5 +52,10 @@ namespace SSLambda
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
             });
         }
+    }
+
+    public class QueryCryptoTxResponse : List<Startup>
+    {
+        public string Foo { get; set; }
     }
 }
